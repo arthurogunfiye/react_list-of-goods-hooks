@@ -56,7 +56,7 @@ export const App: React.FC = () => {
 
   const goods = getPrepareGoods(goodsFromServer, sortQuery, isReversed);
 
-  const handleSortAlphabet = () => {
+  const handleAlphabetSort = () => {
     setSortQuery(prev => {
       if (prev === SortBy.ALPHABET) {
         return SortBy.INITIAL;
@@ -66,7 +66,7 @@ export const App: React.FC = () => {
     });
   };
 
-  const handleSortLength = () => {
+  const handleLengthSort = () => {
     setSortQuery(prev => {
       if (prev === SortBy.LENGTH) {
         return SortBy.INITIAL;
@@ -89,7 +89,7 @@ export const App: React.FC = () => {
           className={cn('button is-info', {
             'is-light': sortQuery !== SortBy.ALPHABET,
           })}
-          onClick={handleSortAlphabet}
+          onClick={handleAlphabetSort}
         >
           Sort alphabetically
         </button>
@@ -98,7 +98,7 @@ export const App: React.FC = () => {
           className={cn('button is-success', {
             'is-light': sortQuery !== SortBy.LENGTH,
           })}
-          onClick={handleSortLength}
+          onClick={handleLengthSort}
         >
           Sort by length
         </button>
